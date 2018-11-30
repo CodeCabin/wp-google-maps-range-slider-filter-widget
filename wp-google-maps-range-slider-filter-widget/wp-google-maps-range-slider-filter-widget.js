@@ -1,4 +1,4 @@
-(function($) {
+jQuery(function($) {
 
 	window.MyCustomFilterWidgets = {};
 	
@@ -50,4 +50,4 @@
 		return data;
 	}
 	
-})(jQuery);
+});
