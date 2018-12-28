@@ -41,4 +41,6 @@ add_filter('wpgmza_get_custom_field_filter', function($field_id, $map_id) {
 	if(\WPGMZA\CustomFieldFilter::getWidgetType($field_id) == 'range-slider')
 		return new RangeFilter($field_id, $map_id);
 	
+	return $field_id;
+	
 }, 10, 2);

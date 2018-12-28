@@ -39,11 +39,15 @@ add_filter('wpgmza_custom_fields_widget_type_options', function($field) {
 // Enqueue the jQuery range slider script
 add_action('wp_enqueue_scripts', function() {
 	
+	$scriptLoader = new \WPGMZA\ScriptLoader(true);
+	$scripts = $scriptLoader->getPluginScripts();
+	$dependencies = array_keys($scripts);
+	
 	wp_enqueue_script('jquery-ui-slider');
 	wp_enqueue_script(
 		'wpgmza-range-slider-filter-widget', 
 		plugin_dir_url(__FILE__) . 'wp-google-maps-range-slider-filter-widget.js', 
-		array('wpgmaps_core')
+		$dependencies
 	);
 	
 });
